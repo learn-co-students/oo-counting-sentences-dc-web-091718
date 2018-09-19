@@ -15,9 +15,14 @@ class String
   end
 
   def count_sentences
-      run_on = self.include?("...")
+    # counts everytime there is a ".","?" and/or "!" located within itself... "string instance"
       total = self.count(".?!")
 
+      # set the situation of a run on sentance or "..." so if it comes up in the string it can be identified as such.
+
+      run_on = self.include?("...")
+
+      # if run is true, subract 3 to account for the "..." that was not actually an indicator of a sentence from the total.
       # if run_on == true
       #   total -= 3
       # end
